@@ -1,5 +1,7 @@
 # KokoHub
 
+HELLO WORLD
+
 KokoHub is a mobile application developed using Dart and Flutter. It is a school co-curricular management system designed to provide comprehensive information about various school activities, including uniformed body units, clubs and societies, and sports and games.
 
 ## Features
