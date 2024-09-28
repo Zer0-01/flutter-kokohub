@@ -3,7 +3,8 @@ import 'package:flutter_kokohub/constants/app_colors.dart';
 import 'package:flutter/gestures.dart';
 
 class SignupWidget extends StatelessWidget {
-  const SignupWidget({super.key});
+  final void Function()? onTap;
+  const SignupWidget({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +18,7 @@ class SignupWidget extends StatelessWidget {
             style: const TextStyle(
               color: AppColors.loginButtonColor, // Color of the clickable text
             ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                //TODO: go to signup page
-              },
+            recognizer: TapGestureRecognizer()..onTap = onTap,
           ),
         ],
       ),
