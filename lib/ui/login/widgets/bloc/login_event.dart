@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'login_bloc.dart';
 
 class LoginEvent extends Equatable {
   @override
@@ -6,6 +6,11 @@ class LoginEvent extends Equatable {
 }
 
 class SignUpButtonPressed extends LoginEvent {
+  @override
+  List<Object?> get props => [];
+}
+
+class ResetNavigationEvent extends LoginEvent {
   @override
   List<Object?> get props => [];
 }
