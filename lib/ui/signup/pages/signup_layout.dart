@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kokohub/constants/app_colors.dart';
 
 class SignupLayout extends StatelessWidget {
   SignupLayout({super.key});
@@ -14,6 +15,7 @@ class SignupLayout extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               'Get Started',
@@ -80,7 +82,18 @@ class SignupLayout extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Next"))
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.loginColor2),
+                  child: Text("Next")),
+            ),
+            Text(
+              "Already have an account? Log in",
+              textAlign: TextAlign.center,
+            )
           ],
         ),
       ),
