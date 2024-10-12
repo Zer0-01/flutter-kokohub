@@ -11,8 +11,7 @@ class SignupLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
+    final localizations = AppLocalizations.of(context)!;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(40.0),
@@ -22,7 +21,7 @@ class SignupLayout extends StatelessWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.signup_get_started,
-              style: TextStyle(fontSize: 36),
+              style: const TextStyle(fontSize: 36),
             ),
             SignUpDropdownWidget(
               text: AppLocalizations.of(context)!.signup_role,
@@ -32,16 +31,16 @@ class SignupLayout extends StatelessWidget {
               }).toList(),
             ),
             SignUpTextFieldWidget(
-              text: AppLocalizations.of(context)!.signup_first_name,
+              text: localizations.signup_first_name,
             ),
             SignUpTextFieldWidget(
-              text: AppLocalizations.of(context)!.signup_last_name,
+              text: localizations.signup_last_name,
             ),
             SignUpTextFieldWidget(
-              text: AppLocalizations.of(context)!.signup_ic_number,
+              text: localizations.signup_ic_number,
             ),
             SignUpTextFieldWidget(
-              text: AppLocalizations.of(context)!.signup_phone_number,
+              text: localizations.signup_phone_number,
             ),
             Align(
               alignment: Alignment.centerRight,
