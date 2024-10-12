@@ -1,5 +1,11 @@
 {
     "@@locale": "en",
-    "passwordLabel": "Password",
-    "emailLabel": "Email"
+    "login_password": "Password",
+    "login_email": "Email",
+    "signup_get_started": "Get Started",
+    "signup_role": "Role",
+    "signup_first_name": "First Name",
+    "signup_last_name": "Last Name",
+    "signup_ic_number": "IC Number",
+    "signup_phone_number": "Phone Number"
 }

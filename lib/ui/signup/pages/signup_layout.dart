@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignupLayout extends StatelessWidget {
   SignupLayout({super.key});
@@ -18,27 +19,32 @@ class SignupLayout extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Get Started',
+              AppLocalizations.of(context)!.signup_get_started,
               style: TextStyle(fontSize: 36),
             ),
-            Text("Role"),
-            DropdownMenu(
-              inputDecorationTheme: InputDecorationTheme(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(30),
-                  )),
-              width: width,
-              initialSelection: "",
-              dropdownMenuEntries:
-                  roles.map<DropdownMenuEntry<String>>((String value) {
-                return DropdownMenuEntry(value: value, label: value);
-              }).toList(),
+            Column(
+              children: [
+                Text(AppLocalizations.of(context)!.signup_role),
+                DropdownMenu(
+                  inputDecorationTheme: InputDecorationTheme(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(30),
+                      )),
+                  width: width,
+                  initialSelection: "",
+                  dropdownMenuEntries:
+                      roles.map<DropdownMenuEntry<String>>((String value) {
+                    return DropdownMenuEntry(value: value, label: value);
+                  }).toList(),
+                ),
+              ],
             ),
-            Text("First name"),
+            Text(AppLocalizations.of(context)!.signup_first_name),
             TextField(
               decoration: InputDecoration(
                 filled: true,
@@ -49,7 +55,7 @@ class SignupLayout extends StatelessWidget {
                 ),
               ),
             ),
-            Text("Last name"),
+            Text(AppLocalizations.of(context)!.signup_last_name),
             TextField(
               decoration: InputDecoration(
                 filled: true,
@@ -60,7 +66,7 @@ class SignupLayout extends StatelessWidget {
                 ),
               ),
             ),
-            Text("IC number"),
+            Text(AppLocalizations.of(context)!.signup_ic_number),
             TextField(
               decoration: InputDecoration(
                 filled: true,
@@ -71,7 +77,7 @@ class SignupLayout extends StatelessWidget {
                 ),
               ),
             ),
-            Text("Phone number"),
+            Text(AppLocalizations.of(context)!.signup_phone_number),
             TextField(
               decoration: InputDecoration(
                 filled: true,
@@ -88,9 +94,9 @@ class SignupLayout extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.loginColor2),
-                  child: Text("Next")),
+                  child: const Text("Next")),
             ),
-            Text(
+            const Text(
               "Already have an account? Log in",
               textAlign: TextAlign.center,
             )

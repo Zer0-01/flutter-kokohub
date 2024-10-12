@@ -45,7 +45,7 @@ class PasswordFormField extends StatelessWidget {
       child: TextFieldLoginWidget(
         controller: passwordController,
         isPassword: true,
-        labelText: AppLocalizations.of(context)!.passwordLabel,
+        labelText: AppLocalizations.of(context)!.login_password,
         keyboardAction: TextInputAction.next,
         onSaved: (value) {
           passwordController.text = value!;
