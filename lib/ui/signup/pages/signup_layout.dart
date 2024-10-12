@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_kokohub/ui/signup/widgets/sign_up_dropdown_widget.dart';
+import 'package:flutter_kokohub/ui/signup/widgets/sign_up_text_field_widget.dart';
 
 class SignupLayout extends StatelessWidget {
   SignupLayout({super.key});
@@ -13,7 +15,7 @@ class SignupLayout extends StatelessWidget {
 
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -22,71 +24,24 @@ class SignupLayout extends StatelessWidget {
               AppLocalizations.of(context)!.signup_get_started,
               style: TextStyle(fontSize: 36),
             ),
-            Column(
-              children: [
-                Text(AppLocalizations.of(context)!.signup_role),
-                DropdownMenu(
-                  inputDecorationTheme: InputDecorationTheme(
-                      contentPadding:
-                          const EdgeInsets.symmetric(horizontal: 20),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(30),
-                      )),
-                  width: width,
-                  initialSelection: "",
-                  dropdownMenuEntries:
-                      roles.map<DropdownMenuEntry<String>>((String value) {
-                    return DropdownMenuEntry(value: value, label: value);
-                  }).toList(),
-                ),
-              ],
+            SignUpDropdownWidget(
+              text: AppLocalizations.of(context)!.signup_role,
+              dropdownMenuEntries:
+                  roles.map<DropdownMenuEntry<String>>((String value) {
+                return DropdownMenuEntry(value: value, label: value);
+              }).toList(),
             ),
-            Text(AppLocalizations.of(context)!.signup_first_name),
-            TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
+            SignUpTextFieldWidget(
+              text: AppLocalizations.of(context)!.signup_first_name,
             ),
-            Text(AppLocalizations.of(context)!.signup_last_name),
-            TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
+            SignUpTextFieldWidget(
+              text: AppLocalizations.of(context)!.signup_last_name,
             ),
-            Text(AppLocalizations.of(context)!.signup_ic_number),
-            TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
+            SignUpTextFieldWidget(
+              text: AppLocalizations.of(context)!.signup_ic_number,
             ),
-            Text(AppLocalizations.of(context)!.signup_phone_number),
-            TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
+            SignUpTextFieldWidget(
+              text: AppLocalizations.of(context)!.signup_phone_number,
             ),
             Align(
               alignment: Alignment.centerRight,
