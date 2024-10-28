@@ -77,6 +77,11 @@ flutter:
   assets:
     - assets/
     - assets/images/
+
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: fonts/Fredoka-VariableFont_wdth,wght.ttf
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

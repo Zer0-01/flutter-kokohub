@@ -21,7 +21,11 @@ class SignupLayout extends StatelessWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.signup_get_started,
-              style: const TextStyle(fontSize: 36),
+              style: const TextStyle(
+                fontFamily: 'Fredoka',
+                fontWeight: FontWeight.bold,
+                fontSize: 36,
+              ),
             ),
             SignUpDropdownWidget(
               text: AppLocalizations.of(context)!.signup_role,
