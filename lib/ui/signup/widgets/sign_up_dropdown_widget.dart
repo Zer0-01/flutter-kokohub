@@ -12,7 +12,11 @@ class SignUpDropdownWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text),
+        Padding(
+          padding: const EdgeInsets.only(left: 22.0),
+          child: Text(text),
+        ),
+        const SizedBox(height: 4.0),
         DropdownMenu(
           inputDecorationTheme: InputDecorationTheme(
               contentPadding: const EdgeInsets.symmetric(horizontal: 20),

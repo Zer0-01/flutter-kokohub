@@ -9,7 +9,11 @@ class SignUpTextFieldWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text),
+        Padding(
+          padding: const EdgeInsets.only(left: 22.0),
+          child: Text(text),
+        ),
+        const SizedBox(height: 4.0),
         TextField(
           decoration: InputDecoration(
             filled: true,
